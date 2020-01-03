@@ -8,7 +8,7 @@ function calculate() {
 	localTime = new Date(localTime);
 	console.log(localTime.toLocaleString()); // Log local time
 
-	if (destinationTime > 0) {
+	if (destinationTime > 0 && destinationTime < 1921) {
 		localTime.setMinutes(localTime.getMinutes() + number); // timestamp
 		localTime = new Date(localTime); // Date object
 		console.log(localTime);
@@ -20,11 +20,11 @@ function calculate() {
 		if (minute < 10) {
 			minute = "0" + minute;
 		}
-		var newDate = day+"/"+(month+1)+"/"+year+" "+hour+":"+minute;
+		var newDate = day+"/"+(month+1)+"/"+year+" at "+hour+":"+minute;
 		console.log(newDate);
-		document.getElementById('destinationtimedisplay').innerHTML = "<h4>You will arive at around "+newDate+".</h4>\n<p>Based on your preferences</p>";
+		document.getElementById('destinationtimedisplay').innerHTML = "<h4>You will arive on the "+newDate+" <small>with the time used in "+localTimezone+"</small>.</h4>\n<p>This time has been caculated based on your inputs.</p>";
 	}
 	else {
-		document.getElementById('destinationtimedisplay').innerHTML = "<p style='color: red;'>Your flight time must be at least 1 minute.</p>";
+		document.getElementById('destinationtimedisplay').innerHTML = "<p style='color: red;'>Your flight time must be at least 1 minute and maximum 1920 minutes.</p>";
 	}
 }
