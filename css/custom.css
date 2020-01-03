@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #007bff;
+}
+.login-box {
+    margin-top: 5vh;
+}
+.banner-box {
+    margin-top: 2vh;
+}
+.center {
+    display: block;
+    margin: 0 auto;
+}
